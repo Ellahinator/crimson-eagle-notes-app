@@ -11,6 +11,7 @@
     let updatedNoteColor = '';
     let exists: boolean = true;
 
+    
     const updateCurrentNote = () => {
         if (!note) {
             return;
@@ -49,18 +50,20 @@
         <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
         <BreadcrumbItem>Edit</BreadcrumbItem>
     </Breadcrumb>
-    <div class="flex flex-col justify-start items-center gap-4">
+    <!-- <div class="flex flex-col justify-start items-center gap-4"> -->
+    <div class="flex items-center justify-center w-full">
+        <div class="flex flex-col relative w-1/2 p-8 aspect-[5/6] rounded-2xl shadow-lg shadow-slate-400 items-center bg-note-orange"> <!-- TODO: change bg color based on note color -->
         {#if !exists} <!-- Display error message if note does not exist -->
             <p>Note not found. Please ensure you have the correct ID.</p>
         {:else}
-            <Label for='large-input' class='block mb-2'>Title</Label>
-            <textarea bind:value={updatedNoteTitle} id='title-input' class="flex gap-2 w-96 h-10 items-center rounded-lg text-sm focus:outline-none neumorph border-black" placeholder="Title..."/>
-            <Label for='large-input' class='block mb-2'>Content</Label>
-            <textarea bind:value={updatedNoteContent} id='content-input' class="flex gap-2 w-96 h-96 rounded-lg text-sm focus:outline-none neumorph border-black break-words" placeholder="Content"/>
+            <textarea bind:value={updatedNoteTitle} id='title-input' class="w-full text-xl font-medium bg-transparent border-none" placeholder="Title..."/>
+            <textarea bind:value={updatedNoteContent} id='content-input' class="w-full flex-1 bg-transparent border-none" placeholder="Content"/>
             <div class="flex items-center bottom-0 p-4 gap-8">
                 <Button on:click={updateCurrentNote} class="btn"> Save </Button>
                 <Button class="btn"><a href="/">Cancel</a></Button>
             </div>
-        {/if}
+            {/if}
+        </div>
     </div>
 </div>
+
