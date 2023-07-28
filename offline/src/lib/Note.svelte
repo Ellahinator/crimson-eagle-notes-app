@@ -84,8 +84,8 @@
 		</svg>
 		<Tooltip arrow={false}>Edit Note</Tooltip>
 	</a>
-	<h2 class="w-full mr-6 text-xl font-medium">{note.title}</h2>
+	<h2 class="w-full mr-6 text-xl font-medium truncate">{note.title}</h2>
 	<div class="w-full flex-1 overflow-hidden fade-text">
-		<p class="my-2">{note.excerpt}</p>
+		<p class="my-2">{note.content}</p>
 	</div>
 </div>

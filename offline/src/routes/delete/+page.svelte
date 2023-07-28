@@ -25,9 +25,6 @@
     {#if areYouSure}
     Show pop up*/
 
-
-
-
 </script>
 
 <div>
@@ -40,9 +37,9 @@
             {#each currentNotes as note}
                 <button on:click={() => deleteNoteById(note.id)}>
                     <div class="flex flex-col relative w-full p-8 aspect-[5/6] rounded-2xl gap-8 shadow-lg shadow-slate-400 bg-note-{note.color}">
-                        <h2 class="w-full mr-6 text-xl font-medium">{note.title}</h2>
+                        <h2 class="w-full mr-6 text-xl font-medium truncate">{note.title}</h2>
                         <div class="w-full flex-1 overflow-hidden fade-text">
-                            <p class="my-2">{note.excerpt}</p>
+                            <p class="my-2">{note.content}</p>
                         </div>
                     </div>
                 </button>
